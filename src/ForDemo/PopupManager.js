@@ -1,4 +1,5 @@
 define('ForDemo/PopupManager', ['Core/Control', 'wml!ForDemo/PopupManager'], function(Control, template) {
+   // Эмуляция контейнера всплывающих окон, присутствующего в Controls.Application
    return Control.extend({
       _template: template,
 

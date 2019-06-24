@@ -1,4 +1,5 @@
 define('ForDemo/SampleOpener', ['Core/Control', 'wml!ForDemo/SampleOpener'], function(Control, template) {
+   // Эмуляция контролов-опенеров из Controls
    return Control.extend({
       _template: template,
 

@@ -1,9 +1,13 @@
 <ForDemo.PopupManager>
    <div class="rootComponent">
+      <!-- Это сопоставление производится сервисом представлений -->
       <Router.router:Route mask="/:appName">
          <ws:if data="{{ content.appName === 'Travel' }}">
             <Travel.Index />
          </ws:if>
+         <ws:else data="{{ content.appName === 'Purchases' }}">
+            <Purchases.Index />
+         </ws:else>
          <ws:else>
             <div class="notFound">Page not found</div>
          </ws:else>

@@ -1,4 +1,8 @@
 <div class="travelPage">
+    <!--
+        Шаблон построен не на основе Controls.Application в связи с отсутствием
+        в демо-файлах модуля Controls и его зависимостей
+    -->
     <h1>Страница Travel</h1>
     <div class="countries">
         <span class="countries__title">Выберите страну отправления:</span>
@@ -35,4 +39,8 @@
         on:urlRemoved="_closePopup()">
         <ForDemo.SampleOpener name="infoOpener" template="Travel/CountryPopup" modal="{{ true }}" />
     </Router.router:Popup>
+    <Router.router:Reference
+        state="/Purchases">
+        <a href="{{ content.href }}">Перейти к Purchases</a>
+    </Router.router:Reference>
 </div>
