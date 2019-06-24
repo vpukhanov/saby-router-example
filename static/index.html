@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Travel</title>
+
+      <!-- Global demo css -->
+      <link rel="stylesheet" href="/ForDemo/globalStyles.css" />
+
+      <!-- Including Wasaby -->
+      <script
+         type="text/javascript"
+         src="https://gistcdn.githack.com/nekqy/1850315aa34998be7bcae6be96e72e9c/raw/fee93172bf6e6684c62211859e0b75f966cbc445/wasaby.min.js"
+      ></script>
+      <!-- Including saby-router -->
+      <script type="text/javascript" src="/static/router.min.js"></script>
+   </head>
+   <body>
+      <div id="root"></div>
+
+      <script>
+         require(['Core/Control', 'ForDemo/RootComponent'], function(Control, RootComponent) {
+            var rootElement = document.querySelector('#root');
+            Control.createControl(RootComponent, { element: rootElement }, rootElement);
+         });
+      </script>
+
+      <!-- Codesandbox define fix -->
+      <script>
+         window.exports = {};
+         window.module = {};
+      </script>
+   </body>
+</html>

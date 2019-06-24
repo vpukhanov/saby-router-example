@@ -1,0 +1,12 @@
+<ForDemo.PopupManager>
+   <div class="rootComponent">
+      <Router.router:Route mask="/:appName">
+         <ws:if data="{{ content.appName === 'Travel' }}">
+            <Travel.Index />
+         </ws:if>
+         <ws:else>
+            <div class="notFound">Page not found</div>
+         </ws:else>
+      </Router.router:Route>
+   </div>
+</ForDemo.PopupManager>

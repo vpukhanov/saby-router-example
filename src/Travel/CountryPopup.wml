@@ -1,0 +1,9 @@
+<div class="countryPopup">
+   <Router.router:Route mask="info-0/:country">
+      <div class="countryInfo">
+         <div>Информация о стране: <strong>{{ content.country }}</strong></div>
+         <!-- Можно вывести дополнительную информацию о стране -->
+         ...
+      </div>
+   </Router.router:Route>
+</div>

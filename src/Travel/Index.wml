@@ -1,0 +1,38 @@
+<div class="travelPage">
+    <h1>Страница Travel</h1>
+    <div class="countries">
+        <span class="countries__title">Выберите страну отправления:</span>
+        <!-- Выводим ссылки на все страны списком -->
+        <ul class="countries__list">
+            <ws:for data="urlName, country in _countries">
+                <li>
+                    <!-- Исходная ссылка на выбор страны -->
+                    <Router.router:Reference state="country/:countryName" countryName="{{ urlName }}">
+                        <a href="{{ content.href }}">{{ country.name }}</a>
+                    </Router.router:Reference>
+                    <!-- Ссылка, открывающая окно -->
+                    <Router.router:Reference state="info-0/:countryName" countryName="{{ urlName }}">
+                        <a href="{{ content.href }}"> (info)</a>
+                    </Router.router:Reference>
+                </li>
+            </ws:for>
+        </ul>
+    </div>
+    <Router.router:Route mask="country/:cName">
+        <div class="cities">
+            <!-- Отображаем города только если страна выбрана, и она есть в списке -->
+            <ws:if data="{{ content.cName && _countries[content.cName] }}">
+                <span class="cities__title">Города страны {{ _countries[content.cName].name }}:</span>
+                <ul class="cities__list">
+                    <ws:for data="city in _countries[content.cName].cities">
+                        <li>{{ city }}</li>
+                    </ws:for>
+                </ul>
+            </ws:if>
+        </div>
+    </Router.router:Route>
+    <Router.router:Popup routeName="info" popupDepth="0" on:urlAdded="_openPopup()" on:urlChanged="_changePopup()"
+        on:urlRemoved="_closePopup()">
+        <ForDemo.SampleOpener name="infoOpener" template="Travel/CountryPopup" modal="{{ true }}" />
+    </Router.router:Popup>
+</div>
